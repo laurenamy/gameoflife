@@ -652,12 +652,14 @@ class Board extends Component {
         this.setState(newState)
     } //end checkNeighbors
     startBoard(state) {
+        clearInterval(intervalID)
         intervalID = setInterval(this.checkNeighbors.bind(this), 300, this.state)
     }
     stopBoard() {
         clearInterval(intervalID)
     }
     resetBoard(state) {
+        clearInterval(intervalID)
         var cells = [];
         var idCount = 0;
         //set initial id numbers
